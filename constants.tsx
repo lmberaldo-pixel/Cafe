@@ -15,11 +15,11 @@ export const BRAND_NAME = "Café Maitá";
 export const CONTACT_PHONE = "5511970210989";
 
 /**
- * Link universal do WhatsApp que funciona tanto em Desktop quanto Mobile
- * sem conflitos de redirecionamento.
+ * Link universal do WhatsApp otimizado para navegadores modernos
  */
 export const getWhatsAppLink = (message: string = "") => {
   const encodedText = encodeURIComponent(message);
+  // O formato wa.me é o padrão atual suportado nativamente pelo Chrome e sistemas móveis
   return `https://wa.me/${CONTACT_PHONE}?text=${encodedText}`;
 };
 
@@ -46,7 +46,7 @@ export const PRODUCTS = [
     description: 'Pack com 2 variedades + caneca artesanal de cerâmica.',
     price: 'R$ 135,00',
     image: 'https://images.unsplash.com/photo-1544787210-2211d44b565a?q=80&w=1000&auto=format&fit=crop',
-    type: 'Grãos' as const // Ajustado para tipo válido
+    type: 'Grãos' as const
   }
 ];
 

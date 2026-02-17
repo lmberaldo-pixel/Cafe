@@ -11,23 +11,25 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    // Usando o evento visibilitychange como alternativa moderna ao unload para gerenciamento de estado se necessário
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === 'hidden') {
-        // Lógica de preservação de estado se necessário (futuro-proof)
-      }
+    // pagehide é o substituto moderno e recomendado pelo Chrome para o evento 'unload'
+    const handlePageHide = (event: PageTransitionEvent) => {
+      // Lógica de encerramento ou persistência de estado se necessária
+      console.debug("Navegação detectada (pagehide):", event.persisted);
     };
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
 
+    // Registrar listeners com opções de compatibilidade moderna
+    // passive: true é crítico para performance de scroll no Chrome
     window.addEventListener('scroll', handleScroll, { passive: true });
-    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('pagehide', handlePageHide);
     
+    // Cleanup rigoroso para evitar memory leaks e warnings de listeners órfãos
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('pagehide', handlePageHide);
     };
   }, []);
 
@@ -43,7 +45,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled || currentPage !== 'home' ? 'bg-white/95 backdrop-blur-md shadow-lg py-1' : 'bg-transparent py-4'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <button onClick={() => setPage('home')} className="flex items-center gap-3 md:gap-4 hover:opacity-90 transition-opacity">
+          <button 
+            onClick={() => {
+              setPage('home');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }} 
+            className="flex items-center gap-3 md:gap-4 hover:opacity-90 transition-opacity"
+          >
             <div className="flex-shrink-0">
               {LOGO_SVG}
             </div>
