@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
+import CoffeeChat from './components/CoffeeChat';
 import { LOGO_SVG, BRAND_NAME, PRODUCTS, FULL_PROCESS, getWhatsAppLink } from './constants';
 
 const App: React.FC = () => {
@@ -27,6 +28,7 @@ const App: React.FC = () => {
       <main className="flex-grow">
         {renderContent()}
       </main>
+      <CoffeeChat />
       <Footer onNavigate={setCurrentPage} />
     </div>
   );
