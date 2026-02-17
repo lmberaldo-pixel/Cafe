@@ -14,8 +14,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    // Usando passive: true para melhor performance de scroll em navegadores modernos
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const navLinks = [
