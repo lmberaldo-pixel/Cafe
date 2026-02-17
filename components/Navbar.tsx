@@ -11,15 +11,23 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    // Usando o evento visibilitychange como alternativa moderna ao unload para gerenciamento de estado se necessário
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'hidden') {
+        // Lógica de preservação de estado se necessário (futuro-proof)
+      }
+    };
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
 
-    // Usando passive: true para melhor performance de scroll em navegadores modernos
     window.addEventListener('scroll', handleScroll, { passive: true });
+    document.addEventListener('visibilitychange', handleVisibilityChange);
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, []);
 
@@ -44,7 +52,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
             </span>
           </button>
           
-          {/* Botão de Início exclusivo para Mobile */}
           <div className="md:hidden flex items-center">
             {currentPage !== 'home' && (
               <button
