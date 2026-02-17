@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { LOGO_SVG, BRAND_NAME, getWhatsAppLink } from '../constants';
-import { registerScrollHandler, createModernListener } from '../services/event-utils';
 
 interface NavbarProps {
   currentPage: string;
@@ -15,19 +14,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-
-    // Uso do utilitário moderno compatível com Chrome 130+
-    const unregisterScroll = registerScrollHandler(handleScroll);
-    
-    // pagehide é o sucessor moderno do unload no Chrome/Safari
-    const unregisterPageHide = createModernListener(window, 'pagehide', (e: any) => {
-      console.debug("Preservando estado antes de ocultar a página:", e.persisted);
-    });
-
-    return () => {
-      unregisterScroll();
-      unregisterPageHide();
-    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
@@ -39,26 +27,41 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled || currentPage !== 'home' ? 'bg-white/80 backdrop-blur-xl shadow-sm py-2' : 'bg-transparent py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-between items-center">
-          <button 
-            onClick={() => {
-              setPage('home');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }} 
-            className="group flex items-center gap-4 transition-transform active:scale-95"
-          >
-            <div className="relative">
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled || currentPage !== 'home' ? 'bg-white/95 backdrop-blur-md shadow-lg py-1' : 'bg-transparent py-4'}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          <button onClick={() => setPage('home')} className="flex items-center gap-3 md:gap-4 hover:opacity-90 transition-opacity">
+            <div className="flex-shrink-0">
               {LOGO_SVG}
-              <div className="absolute -inset-1 bg-emerald-900/10 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
-            <span className={`text-2xl font-bold font-serif tracking-tight ${scrolled || currentPage !== 'home' ? 'text-stone-900' : 'text-white'}`}>
+            <span className={`text-xl md:text-2xl font-bold font-serif ${scrolled || currentPage !== 'home' ? 'text-stone-900' : 'text-white'}`}>
               {BRAND_NAME}
             </span>
           </button>
           
-          <div className="hidden md:flex items-center gap-10">
+          {/* Botão de Início exclusivo para Mobile */}
+          <div className="md:hidden flex items-center">
+            {currentPage !== 'home' && (
+              <button
+                onClick={() => {
+                  setPage('home');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full border text-[10px] font-bold uppercase tracking-widest transition-all ${
+                  scrolled || currentPage !== 'home'
+                    ? 'text-stone-900 border-stone-200 bg-stone-100'
+                    : 'text-white border-white/20 bg-white/10'
+                }`}
+              >
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                Início
+              </button>
+            )}
+          </div>
+
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <button
                 key={link.id}
@@ -66,10 +69,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
                   setPage(link.id);
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className={`text-sm font-semibold tracking-wide uppercase transition-all relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-current after:transition-all hover:after:w-full ${
+                className={`font-medium transition-colors ${
                   currentPage === link.id 
-                    ? 'text-emerald-800 after:w-full' 
-                    : (scrolled || currentPage !== 'home' ? 'text-stone-500 hover:text-emerald-800' : 'text-stone-300 hover:text-white')
+                    ? 'text-[#1B4332]' 
+                    : (scrolled || currentPage !== 'home' ? 'text-stone-600 hover:text-[#1B4332]' : 'text-stone-200 hover:text-white')
                 }`}
               >
                 {link.label}
@@ -79,17 +82,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
               href={getWhatsAppLink("Olá! Gostaria de fazer um pedido de Café Maitá.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-emerald-900 text-white px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:bg-emerald-950 transition-all shadow-xl hover:shadow-emerald-900/20 active:translate-y-0.5"
+              className="bg-[#1B4332] text-white px-6 py-2 rounded-full font-bold hover:bg-[#081C15] transition-all transform hover:scale-105 shadow-lg"
             >
-              Fazer Pedido
+              Pedir Agora
             </a>
-          </div>
-
-          {/* Mobile Menu Icon Simplificado */}
-          <div className="md:hidden">
-             <button className={`${scrolled || currentPage !== 'home' ? 'text-stone-900' : 'text-white'}`}>
-               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6h16M4 12h16m-7 6h7"/></svg>
-             </button>
           </div>
         </div>
       </div>

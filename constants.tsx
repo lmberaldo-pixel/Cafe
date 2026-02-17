@@ -12,25 +12,34 @@ export const LOGO_SVG = (
 );
 
 export const BRAND_NAME = "Café Maitá";
-export const CONTACT_PHONE = "5511970210989";
+export const CONTACT_PHONE = "+5511970210989";
 
 /**
- * Link universal do WhatsApp otimizado para navegadores modernos
+ * Gera um link do WhatsApp otimizado para o dispositivo do usuário.
+ * No Mobile: utiliza o protocolo whatsapp:// para abertura direta do app.
+ * No Desktop: utiliza o link do WhatsApp Web para pular telas de confirmação.
+ * Remove atrasos e garante compatibilidade com bloqueadores de popup.
  */
 export const getWhatsAppLink = (message: string = "") => {
+  const cleanPhone = CONTACT_PHONE.replace(/\D/g, '');
   const encodedText = encodeURIComponent(message);
-  // O formato wa.me é o padrão atual suportado nativamente pelo Chrome e sistemas móveis
-  return `https://wa.me/${CONTACT_PHONE}?text=${encodedText}`;
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  
+  if (isMobile) {
+    return `whatsapp://send?phone=${cleanPhone}${message ? `&text=${encodedText}` : ''}`;
+  }
+  // Link direto para WhatsApp Web no Desktop
+  return `https://web.whatsapp.com/send?phone=${cleanPhone}${message ? `&text=${encodedText}` : ''}`;
 };
 
 export const PRODUCTS = [
   {
     id: 'grains-500',
     name: 'Maitá Reserva Grãos',
-    description: '100% Arábica, torra média com notas de chocolate e caramelo.',
+    description: '100% Arábica, torra média com notes de chocolate e caramelo.',
     price: 'R$ 48,00',
     image: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=600&auto=format&fit=crop',
-    type: 'Grãos' as const
+    type: 'Grãos'
   },
   {
     id: 'ground-500',
@@ -38,7 +47,7 @@ export const PRODUCTS = [
     description: 'Moagem média-fina ideal para métodos coados tradicionais.',
     price: 'R$ 48,00',
     image: 'https://images.unsplash.com/photo-1580915411954-282cb1b0d780?q=80&w=1000&auto=format&fit=crop',
-    type: 'Moído' as const
+    type: 'Moído'
   },
   {
     id: 'kit-presente',
@@ -46,7 +55,7 @@ export const PRODUCTS = [
     description: 'Pack com 2 variedades + caneca artesanal de cerâmica.',
     price: 'R$ 135,00',
     image: 'https://images.unsplash.com/photo-1544787210-2211d44b565a?q=80&w=1000&auto=format&fit=crop',
-    type: 'Grãos' as const
+    type: 'Presente'
   }
 ];
 
