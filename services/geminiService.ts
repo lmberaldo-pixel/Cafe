@@ -14,7 +14,7 @@ Mantenha as respostas curtas e objetivas.
 
 export const getCoffeeAdvice = async (userPrompt: string) => {
   try {
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
       contents: userPrompt,

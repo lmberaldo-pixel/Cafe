@@ -3,16 +3,16 @@ import React from 'react';
 
 export const LOGO_SVG = (
   <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-[#1B4332] bg-white shadow-inner flex items-center justify-center p-0.5">
-    <img 
-      src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=200&auto=format&fit=crop" 
-      alt="Logo Café Maitá" 
+    <img
+      src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=200&auto=format&fit=crop"
+      alt="Logo Café Maitá"
       className="w-full h-full object-cover rounded-full"
     />
   </div>
 );
 
 export const BRAND_NAME = "Café Maitá";
-export const CONTACT_PHONE = "+5511970210989";
+export const CONTACT_PHONE = import.meta.env.VITE_CONTACT_PHONE || "+5511970210989";
 
 /**
  * Gera um link do WhatsApp otimizado para o dispositivo do usuário.
@@ -24,7 +24,7 @@ export const getWhatsAppLink = (message: string = "") => {
   const cleanPhone = CONTACT_PHONE.replace(/\D/g, '');
   const encodedText = encodeURIComponent(message);
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  
+
   if (isMobile) {
     return `whatsapp://send?phone=${cleanPhone}${message ? `&text=${encodedText}` : ''}`;
   }

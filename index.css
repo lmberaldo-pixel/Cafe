@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply font-sans;
+    }
+
+    h1,
+    h2,
+    h3 {
+        @apply font-serif;
+    }
+}
+
+@layer components {
+
+    /* Verde Floresta Premium */
+    .bg-coffee-dark {
+        @apply bg-[#1B4332];
+    }
+
+    .text-coffee-light {
+        @apply text-[#E5D5C5];
+    }
+
+    .border-coffee-gold {
+        @apply border-[#C19A6B];
+    }
+}
+
+/* Ocultar barra de rolagem em navegadores modernos */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
