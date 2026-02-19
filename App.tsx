@@ -1,8 +1,20 @@
 
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
-import CoffeeChat from './components/CoffeeChat';
 import { LOGO_SVG, BRAND_NAME, PRODUCTS, FULL_PROCESS, getWhatsAppLink } from './constants';
+import logoImg from './Cafe-maita/foto/logo.jpg';
+import processCuraImg from './Cafe-maita/foto/ChatGPT Image 16 de fev. de 2026, 18_57_17.png';
+import gardenImg from './Cafe-maita/foto/jardim4.jpg';
+import harvestImg from './Cafe-maita/foto/png/graotorra1.png';
+import historyImg from './Cafe-maita/foto/IMG_20250711_172938.jpg';
+import maitaVideo1 from './Cafe-maita/video/VID_20260215_201452_585.mp4';
+import maitaVideo2 from './Cafe-maita/video/YouCut_20260215_214824771.mp4';
+import maitaVideo3 from './Cafe-maita/video/VID_20260215_201316_174.mp4';
+import maitaVideo4 from './Cafe-maita/video/VID_20260215_201922_381.mp4';
+import maitaVideoTorra from './Cafe-maita/video/VID_20260215_201416_750.mp4';
+import maitaVideoColheita from './Cafe-maita/video/.trashed-1773795075-VID_20260215_201849_738.mp4';
+import maitaVideoPreparo from './Cafe-maita/video/VID_20260215_201118_829.mp4';
+import maitaVideoLifestyle from './Cafe-maita/video/torranofogo.mp4';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -28,7 +40,6 @@ const App: React.FC = () => {
       <main className="flex-grow">
         {renderContent()}
       </main>
-      <CoffeeChat />
       <Footer onNavigate={setCurrentPage} />
     </div>
   );
@@ -39,28 +50,25 @@ const HomePage: React.FC<{ onNavigate: (p: string) => void }> = ({ onNavigate })
   <>
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
-        <img 
-          src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2000&auto=format&fit=crop" 
-          className="w-full h-full object-cover brightness-[0.4] animate-slow-zoom" 
-          alt="Coffee Table" 
+        <img
+          src={processCuraImg}
+          className="w-full h-full object-cover brightness-[0.4] animate-slow-zoom"
+          alt="Coffee Table"
         />
       </div>
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10 select-none pointer-events-none">
-           <h2 className="text-[12rem] font-serif text-white">Maitá</h2>
-        </div>
         <h1 className="text-4xl md:text-5xl font-light text-white mb-10 tracking-wide drop-shadow-md leading-relaxed">
           O café artesanal que carrega a alma de Manduri em cada grão.
         </h1>
         <div className="flex flex-wrap justify-center gap-6">
-          <button 
-            onClick={() => onNavigate('products')} 
+          <button
+            onClick={() => onNavigate('products')}
             className="bg-[#1B4332] text-white px-12 py-5 rounded-[2rem] text-xl font-semibold hover:bg-[#081C15] transition-all shadow-xl"
           >
             Explorar Sabores
           </button>
-          <button 
-            onClick={() => onNavigate('history')} 
+          <button
+            onClick={() => onNavigate('history')}
             className="bg-transparent text-white border-2 border-white/50 px-12 py-5 rounded-[2rem] text-xl font-semibold hover:bg-white/10 transition-all backdrop-blur-sm"
           >
             Nossa Jornada
@@ -83,40 +91,40 @@ const HomePage: React.FC<{ onNavigate: (p: string) => void }> = ({ onNavigate })
           </div>
           <div className="md:w-1/2 grid grid-cols-2 gap-6 w-full">
             <div className="aspect-square overflow-hidden rounded-3xl shadow-xl">
-              <img 
-                src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=1000&auto=format&fit=crop" 
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
-                alt="Fazenda de Café" 
+              <img
+                src={gardenImg}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                alt="Fazenda de Café"
               />
             </div>
             <div className="aspect-square overflow-hidden rounded-3xl shadow-xl">
-              <img 
-                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1000&auto=format&fit=crop" 
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
-                alt="Grãos de Café" 
+              <img
+                src={harvestImg}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                alt="Grãos de Café"
               />
             </div>
           </div>
         </div>
 
         <div className="w-full text-center -mb-8">
-           <h2 className="text-4xl font-bold font-serif text-[#1B4332]">Etapas da torra</h2>
+          <h2 className="text-4xl font-bold font-serif text-[#1B4332]">Etapas da torra</h2>
         </div>
 
         <div className="w-full bg-stone-50 p-8 md:p-12 rounded-[2.5rem] border border-stone-200 shadow-sm">
           <div className="max-w-4xl mx-auto space-y-10">
             <div className="border-l-4 border-[#1B4332] pl-6 py-2 flex flex-col md:flex-row items-center gap-8">
               <div className="flex-1">
-                <h3 className="text-2xl font-serif font-bold text-[#1B4332] mb-4">Torrador de Bola/Tambor Manual:</h3>
+                <h3 className="text-2xl font-serif font-bold text-[#1B4332] mb-4">Torreador Manual Cilíndrico:</h3>
                 <p className="text-stone-700 mb-2">Um pequeno cilindro metálico giratório colocado sobre o fogão (a gás ou lenha).</p>
                 <p className="text-stone-700 mb-2">Coloque os grãos até a metade, pois eles aumentam de volume.</p>
                 <p className="text-stone-700">Gire a manivela constantemente para garantir uma torra uniforme.</p>
               </div>
               <div className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 rounded-2xl overflow-hidden shadow-md border border-stone-200 bg-white p-2">
-                <img 
-                  src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=400&auto=format&fit=crop" 
-                  className="w-full h-full object-contain" 
-                  alt="Ilustração Torrador de Bola" 
+                <img
+                  src={logoImg}
+                  className="w-full h-full object-contain"
+                  alt="Ilustração Torrador de Bola"
                 />
               </div>
             </div>
@@ -161,16 +169,16 @@ const HistoryPage: React.FC = () => (
     <div className="max-w-4xl mx-auto px-4">
       <span className="text-[#1B4332] font-bold uppercase tracking-widest text-sm mb-4 block">Nossa História</span>
       <h1 className="text-5xl md:text-6xl font-bold font-serif mb-12 text-stone-900 leading-tight">Um Canto que Ecoa de Manduri para a sua Xícara</h1>
-      
+
       <div className="aspect-video mb-12 rounded-3xl overflow-hidden shadow-2xl">
-        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1500&auto=format&fit=crop" className="w-full h-full object-cover" alt="Manduri Landscape" />
+        <img src={historyImg} className="w-full h-full object-cover" alt="Manduri Landscape" />
       </div>
 
       <div className="prose prose-lg text-stone-600 max-w-none space-y-8">
         <p className="text-2xl font-serif text-stone-800 italic">
           "Onde outros viam apenas pastagens, nós vimos uma oportunidade de preservar a herança de Manduri através do cultivo sustentável."
         </p>
-        
+
         <h3 className="text-3xl font-serif text-stone-900 mt-12 mb-6 text-[#1B4332]">Nome da Cidade</h3>
         <p>
           A história moderna de Manduri começou a ser trilhada nos trilhos de ferro. Em <strong>1905</strong>, com o avanço da Estrada de Ferro Sorocabana, a cidade nasceu como um ponto estratégico de conexão, pulsando ao ritmo do progresso ferroviário.
@@ -276,13 +284,13 @@ const ProductsPage: React.FC = () => (
               <p className="text-stone-500 text-sm mb-6 flex-grow">{product.description}</p>
               <div className="flex justify-between items-center mt-auto">
                 <span className="text-2xl font-bold text-[#1B4332]">{product.price}</span>
-                <a 
+                <a
                   href={getWhatsAppLink(`Olá! Tenho interesse no ${product.name} de Manduri.`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#1B4332] text-white p-3 rounded-full hover:bg-[#081C15] transition-colors shadow-lg"
                 >
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" /></svg>
                 </a>
               </div>
             </div>
@@ -326,12 +334,15 @@ const ProcessPage: React.FC = () => (
 // --- PAGINA: VIDEOS ---
 const VideosPage: React.FC = () => {
   const videoCards = [
-    { id: 1, title: 'O Despertar da Fazenda', subtitle: 'Amanhecer em Manduri', thumb: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1000&auto=format&fit=crop' },
-    { id: 2, title: 'Arte no Preparo', subtitle: 'Método Hario V60', thumb: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1000&auto=format&fit=crop' },
-    { id: 3, title: 'A Colheita Seletiva', subtitle: 'Mãos que cuidam', thumb: 'https://images.unsplash.com/photo-1524350300060-d39f447120e7?q=80&w=1000&auto=format&fit=crop' },
-    { id: 4, title: 'Lifestyle Maitá', subtitle: 'Momentos de Pausa', thumb: 'https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=1000&auto=format&fit=crop' },
-    { id: 5, title: 'Nossa Torrefação', subtitle: 'O perfume do grão', thumb: 'https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?q=80&w=1000&auto=format&fit=crop' },
-    { id: 6, title: 'Horto Florestal', subtitle: 'Natureza Viva', thumb: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1000&auto=format&fit=crop' },
+    { id: 0, title: 'Momentos Maitá II', subtitle: 'Experiência Completa', thumb: '', video: maitaVideo2 },
+    { id: 1, title: 'Momentos Maitá III', subtitle: 'Detalhes da Torra', thumb: '', video: maitaVideo3 },
+    { id: 2, title: 'O Despertar da Fazenda', subtitle: 'Amanhecer em Manduri', thumb: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1000&auto=format&fit=crop' },
+    { id: 3, title: 'Momentos Maitá', subtitle: 'Preview Exclusivo', thumb: '', video: maitaVideo1 },
+    { id: 4, title: 'Arte no Preparo', subtitle: 'Método Hario V60', thumb: processCuraImg, video: maitaVideoPreparo },
+    { id: 5, title: 'Momentos Maitá IV', subtitle: 'Natureza em Movimento', thumb: '', video: maitaVideo4 },
+    { id: 6, title: 'A Colheita Seletiva', subtitle: 'Mãos que cuidam', thumb: 'https://images.unsplash.com/photo-1524350300060-d39f447120e7?q=80&w=1000&auto=format&fit=crop', video: maitaVideoColheita },
+    { id: 7, title: 'Lifestyle Maitá', subtitle: 'Momentos de Pausa', thumb: gardenImg, video: maitaVideoLifestyle },
+    { id: 8, title: 'Nossa Torrefação', subtitle: 'O perfume do grão', thumb: 'https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?q=80&w=1000&auto=format&fit=crop', video: maitaVideoTorra },
   ];
 
   return (
@@ -346,13 +357,24 @@ const VideosPage: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-10">
           {videoCards.map((video) => (
             <div key={video.id} className="group relative aspect-[9/16] bg-stone-200 rounded-[2rem] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer">
-              <img src={video.thumb} className="w-full h-full object-cover brightness-75 group-hover:scale-110 transition-transform duration-1000" alt={video.title} />
-              
+              {video.video ? (
+                <video
+                  src={video.video}
+                  className="w-full h-full object-cover brightness-75 group-hover:scale-110 transition-transform duration-1000"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              ) : (
+                <img src={video.thumb} className="w-full h-full object-cover brightness-75 group-hover:scale-110 transition-transform duration-1000" alt={video.title} />
+              )}
+
               <div className="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-transparent to-transparent opacity-80" />
-              
+
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 transform scale-75 group-hover:scale-100 transition-transform duration-500">
-                  <svg className="w-8 h-8 text-white fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  <svg className="w-8 h-8 text-white fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
                 </div>
               </div>
 
@@ -385,21 +407,21 @@ const Footer: React.FC<{ onNavigate: (p: string) => void }> = ({ onNavigate }) =
         <div>
           <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-widest">Navegação</h4>
           <ul className="space-y-4 text-sm">
-            <li><button onClick={() => { onNavigate('home'); window.scrollTo(0,0); }} className="hover:text-white transition-colors">Início</button></li>
-            <li><button onClick={() => { onNavigate('history'); window.scrollTo(0,0); }} className="hover:text-white transition-colors">Nossa História</button></li>
-            <li><button onClick={() => { onNavigate('products'); window.scrollTo(0,0); }} className="hover:text-white transition-colors">Produtos</button></li>
-            <li><button onClick={() => { onNavigate('process'); window.scrollTo(0,0); }} className="hover:text-white transition-colors">Processo de Produção</button></li>
-            <li><button onClick={() => { onNavigate('videos'); window.scrollTo(0,0); }} className="hover:text-white transition-colors">Momentos Maitá (Vídeos)</button></li>
+            <li><button onClick={() => { onNavigate('home'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Início</button></li>
+            <li><button onClick={() => { onNavigate('history'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Nossa História</button></li>
+            <li><button onClick={() => { onNavigate('products'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Produtos</button></li>
+            <li><button onClick={() => { onNavigate('process'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Processo de Produção</button></li>
+            <li><button onClick={() => { onNavigate('videos'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Momentos Maitá (Vídeos)</button></li>
           </ul>
         </div>
         <div>
           <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-widest">Contato</h4>
           <p className="text-sm mb-2">Manduri - SP</p>
           <p className="text-sm mb-4 text-white font-bold">+55 11 97021-0989</p>
-          <a 
-            href={getWhatsAppLink("Olá! Gostaria de falar com a equipe do Café Maitá.")} 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a
+            href={getWhatsAppLink("Olá! Gostaria de falar com a equipe do Café Maitá.")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-[#1B4332] text-white px-6 py-3 rounded-xl text-xs font-bold hover:bg-[#081C15] transition-all shadow-lg"
           >
             FALAR NO WHATSAPP
