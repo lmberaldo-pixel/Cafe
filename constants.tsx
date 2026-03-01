@@ -41,6 +41,7 @@ export const PRODUCTS = [
     name: 'Maitá Reserva Grãos',
     description: '100% Arábica, torra média com notes de chocolate e caramelo.',
     price: 'R$ 40,00',
+    priceValue: 40,
     image: logoImg,
     type: 'Grãos'
   },
@@ -49,23 +50,16 @@ export const PRODUCTS = [
     name: 'Maitá Seleção Moído',
     description: 'Moagem média-fina ideal para métodos coados tradicionais.',
     price: 'R$ 40,00',
+    priceValue: 40,
     image: logoImg,
     type: 'Moído'
-  },
-  {
-    id: 'kit-presente',
-    name: 'Kit Experiência Maitá',
-    description: 'Pack com 2 variedades + caneca artesanal de cerâmica.',
-    price: 'R$ 40,00',
-    image: logoImg,
-    type: 'Presente'
   }
 ];
 
 export const FULL_PROCESS = [
   {
     title: 'Terroir Único',
-    description: 'Cultivado a 750m de altitude, o Café Maitá aproveita a umidade vinda da Floresta Estadual e do Horto Florestal de Manduri.',
+    description: 'Cultivado a 705m de altitude, o Café Maitá aproveita a umidade vinda da Floresta Estadual e do Horto Florestal de Manduri.',
     details: 'A composição mineral rica do solo da nossa região oferece nutrientes que resultam em uma acidez cítrica refinada e corpo equilibrado.',
     image: terroirImg
   },

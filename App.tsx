@@ -5,16 +5,25 @@ import { LOGO_SVG, BRAND_NAME, PRODUCTS, FULL_PROCESS, getWhatsAppLink } from '.
 import logoImg from './Cafe-maita/foto/logo.jpg';
 import processCuraImg from './Cafe-maita/foto/ChatGPT Image 16 de fev. de 2026, 18_57_17.png';
 import gardenImg from './Cafe-maita/foto/jardim4.jpg';
-import harvestImg from './Cafe-maita/foto/png/graotorra1.png';
+import harvestImg from './Cafe-maita/foto/ChatGPT Image 21 de fev. de 2026, 18_27_50.png';
 import historyImg from './Cafe-maita/foto/IMG_20250711_172938.jpg';
+import cidadeImg from './Cafe-maita/foto/IMG_20250701_213210.jpg';
+import identidadeImg from './Cafe-maita/foto/ChatGPT Image 16 de fev. de 2026, 18_55_20.png';
+import ararasImg from './Cafe-maita/foto/IMG_20260221_012644_128.jpg';
 import maitaVideo1 from './Cafe-maita/video/VID_20260215_201452_585.mp4';
 import maitaVideo2 from './Cafe-maita/video/YouCut_20260215_214824771.mp4';
 import maitaVideo3 from './Cafe-maita/video/VID_20260215_201316_174.mp4';
 import maitaVideo4 from './Cafe-maita/video/VID_20260215_201922_381.mp4';
 import maitaVideoTorra from './Cafe-maita/video/VID_20260215_201416_750.mp4';
-import maitaVideoColheita from './Cafe-maita/video/.trashed-1773795075-VID_20260215_201849_738.mp4';
+import maitaVideoColheita from './Cafe-maita/video/VID_20260215_201849_738.mp4';
 import maitaVideoPreparo from './Cafe-maita/video/VID_20260215_201118_829.mp4';
 import maitaVideoLifestyle from './Cafe-maita/video/torranofogo.mp4';
+import maitaVideoDespertar from './Cafe-maita/video/VID_20260221_013026_938.mp4';
+import maitaVideoExtra1 from './Cafe-maita/video/VID_20260221_012359_348.mp4';
+import maitaVideoExtra2 from './Cafe-maita/video/VID_20260221_012422_976.mp4';
+import maitaVideoExtra3 from './Cafe-maita/video/VID_20260221_013039_845.mp4';
+import maitaVideoExtra4 from './Cafe-maita/video/VID_20260221_012533_165.mp4';
+import maitaVideoExtra5 from './Cafe-maita/video/VID_20260221_013039_926.mp4';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -179,20 +188,27 @@ const HistoryPage: React.FC = () => (
           "Onde outros viam apenas pastagens, nós vimos uma oportunidade de preservar a herança de Manduri através do cultivo sustentável."
         </p>
 
-        <h3 className="text-3xl font-serif text-stone-900 mt-12 mb-6 text-[#1B4332]">Nome da Cidade</h3>
-        <p>
-          A história moderna de Manduri começou a ser trilhada nos trilhos de ferro. Em <strong>1905</strong>, com o avanço da Estrada de Ferro Sorocabana, a cidade nasceu como um ponto estratégico de conexão, pulsando ao ritmo do progresso ferroviário.
-        </p>
-        <p>
-          O nome "Manduri" carrega em si a essência da nossa terra através de duas origens fascinantes. A primeira homenageia a abundância da <strong>abelha silvestre Manduri</strong>, famosa por seu mel delicioso que perfumava a região. A segunda raiz vem da língua Tupi, significando <strong>"Campo Largo"</strong>, uma descrição perfeita da nossa topografia de planalto.
-        </p>
+        <div className="clearfix mb-12">
+          <img src={cidadeImg} alt="Nome da cidade" className="float-left w-32 h-32 md:w-48 md:h-48 object-cover rounded-2xl shadow-lg mr-6 mb-4" />
+          <h3 className="text-3xl font-serif text-stone-900 mb-6 text-[#1B4332]">Nome da Cidade</h3>
+          <p>
+            A história moderna de Manduri começou a ser trilhada nos trilhos de ferro. Em <strong>1905</strong>, com o avanço da Estrada de Ferro Sorocabana, a cidade nasceu como um ponto estratégico de conexão, pulsando ao ritmo do progresso ferroviário.
+          </p>
+          <p>
+            O nome "Manduri" carrega em si a essência da nossa terra através de duas origens fascinantes. A primeira homenageia a abundância da <strong>abelha silvestre Manduri</strong>, famosa por seu mel delicioso que perfumava a região. A segunda raiz vem da língua Tupi, significando <strong>"Campo Largo"</strong>, uma descrição perfeita da nossa topografia de planalto.
+          </p>
+        </div>
 
-        <h3 className="text-3xl font-serif text-stone-900 mt-12 mb-6 text-[#1B4332]">Identidade e Autonomia</h3>
-        <p>
-          Foi em <strong>1944</strong> que Manduri alcançou um marco fundamental, sendo elevada à categoria de Município, com sua instalação oficial em 1º de janeiro de 1945. Essa autonomia permitiu que a vocação agropecuária da região se consolidasse, servindo de berço para o que viria a ser o Café Maitá.
-        </p>
+        <div className="clearfix mb-12">
+          <img src={identidadeImg} alt="Identidade e Autonomia" className="float-right w-32 h-32 md:w-48 md:h-48 object-cover rounded-2xl shadow-lg ml-6 mb-4" />
+          <h3 className="text-3xl font-serif text-stone-900 mb-6 text-[#1B4332]">Identidade e Autonomia</h3>
+          <p>
+            Foi em <strong>1944</strong> que Manduri alcançou um marco fundamental, sendo elevada à categoria de Município, com sua instalação oficial em 1º de janeiro de 1945. Essa autonomia permitiu que a vocação agropecuária da região se consolidasse, servindo de berço para o que viria a ser o Café Maitá.
+          </p>
+        </div>
 
-        <div className="mt-20 pt-10 border-t border-stone-200">
+        <div className="mt-20 pt-10 border-t border-stone-200 clearfix">
+          <img src={ararasImg} alt="Araras" className="float-left w-32 h-32 md:w-48 md:h-48 object-cover rounded-2xl shadow-lg mr-6 mb-4" />
           <h3 className="text-3xl font-serif text-stone-900 mb-8 text-[#1B4332]">Araras: O Pulso Rural de Manduri</h3>
           <p>
             Ancorado na zona rural de Manduri, o <strong>Bairro Araras</strong> (CEP 18780-000) é muito mais que uma coordenada geográfica; é onde a alma produtora da nossa terra se manifesta em sua forma mais pura. Longe da agitação urbana, este bairro é composto por propriedades agrícolas e chácaras que formam um cinturão de cultivo essencial para a nossa identidade.
@@ -262,44 +278,128 @@ const HistoryPage: React.FC = () => (
 );
 
 // --- PAGINA: PRODUTOS ---
-const ProductsPage: React.FC = () => (
-  <div className="pt-32 pb-24 bg-white">
-    <div className="max-w-7xl mx-auto px-4">
-      <div className="text-center mb-16">
-        <h1 className="text-5xl font-bold font-serif mb-4 text-[#1B4332]">Loja Maitá</h1>
-        <p className="text-stone-500 max-w-2xl mx-auto">Descubra o frescor da torra artesanal e transforme seu ritual diário com a sofisticação e o sabor autêntico do nosso café 100% Arábica.</p>
+const ProductsPage: React.FC = () => {
+  const [cart, setCart] = useState<Record<string, number>>({});
+
+  const updateQty = (id: string, delta: number) => {
+    setCart(prev => {
+      const next = (prev[id] || 0) + delta;
+      if (next <= 0) {
+        const { [id]: _, ...rest } = prev;
+        return rest;
+      }
+      return { ...prev, [id]: next };
+    });
+  };
+
+  const totalItems = Object.keys(cart).reduce((s, k) => s + (cart[k] || 0), 0);
+  const totalPrice = PRODUCTS.reduce((s, p) => s + (cart[p.id] || 0) * p.priceValue, 0);
+
+  const handleCheckout = () => {
+    const lines = PRODUCTS
+      .filter(p => (cart[p.id] || 0) > 0)
+      .map(p => `• ${cart[p.id]}x ${p.name} (${p.type}) — R$ ${((cart[p.id] || 0) * p.priceValue).toFixed(2).replace('.', ',')}`);
+
+    const msg = [
+      'Olá! Gostaria de fazer o seguinte pedido:',
+      '',
+      ...lines,
+      '',
+      `*Total: R$ ${totalPrice.toFixed(2).replace('.', ',')}*`,
+    ].join('\n');
+
+    window.open(getWhatsAppLink(msg), '_blank');
+  };
+
+  return (
+    <div className="pt-32 pb-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-16">
+          <h1 className="text-5xl font-bold font-serif mb-4 text-[#1B4332]">Loja Maitá</h1>
+          <p className="text-stone-500 max-w-2xl mx-auto">Descubra o frescor da torra artesanal e transforme seu ritual diário com a sofisticação e o sabor autêntico do nosso café 100% Arábica.</p>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-10 max-w-4xl mx-auto">
+          {PRODUCTS.map((product) => {
+            const qty = cart[product.id] || 0;
+            return (
+              <div key={product.id} className="w-full md:w-[calc(50%-1.25rem)] group bg-stone-50 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col">
+                <div className="aspect-square overflow-hidden relative bg-white">
+                  <img src={product.image} alt={product.name} className="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-700" />
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-[#1B4332]">
+                    {product.type}
+                  </div>
+                  {qty > 0 && (
+                    <div className="absolute top-4 right-4 bg-[#1B4332] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shadow-lg">
+                      {qty}
+                    </div>
+                  )}
+                </div>
+                <div className="p-8 flex flex-col flex-grow">
+                  <h3 className="text-2xl font-bold mb-3 font-serif text-[#1B4332]">{product.name}</h3>
+                  <p className="text-stone-500 text-sm mb-6 flex-grow">{product.description}</p>
+                  <div className="flex justify-between items-center mt-auto">
+                    <span className="text-2xl font-bold text-[#1B4332]">{product.price}</span>
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => updateQty(product.id, -1)}
+                        className="w-10 h-10 rounded-full border-2 border-stone-300 text-stone-500 flex items-center justify-center hover:border-[#1B4332] hover:text-[#1B4332] transition-colors text-xl font-bold disabled:opacity-30 disabled:cursor-not-allowed"
+                        disabled={qty === 0}
+                      >
+                        −
+                      </button>
+                      <span className="w-8 text-center font-bold text-lg text-stone-800">{qty}</span>
+                      <button
+                        onClick={() => updateQty(product.id, 1)}
+                        className="w-10 h-10 rounded-full bg-[#1B4332] text-white flex items-center justify-center hover:bg-[#081C15] transition-colors text-xl font-bold shadow-lg"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-10">
-        {PRODUCTS.map((product) => (
-          <div key={product.id} className="group bg-stone-50 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col">
-            <div className="aspect-square overflow-hidden relative">
-              <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-              <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-[#1B4332]">
-                {product.type}
+      {/* Carrinho fixo no rodapé */}
+      <div className={`fixed bottom-0 left-0 right-0 z-50 transition-all duration-500 ${totalItems > 0 ? 'translate-y-0' : 'translate-y-full'}`}>
+        <div className="bg-[#1B4332] text-white shadow-[0_-4px_20px_rgba(0,0,0,0.3)] backdrop-blur-lg">
+          <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className="relative">
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" /></svg>
+                <span className="absolute -top-2 -right-2 bg-[#C19A6B] text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">{totalItems}</span>
+              </div>
+              <div>
+                <p className="text-sm text-white/70">{totalItems} {totalItems === 1 ? 'item' : 'itens'} no carrinho</p>
+                <p className="text-xl font-bold">R$ {totalPrice.toFixed(2).replace('.', ',')}</p>
               </div>
             </div>
-            <div className="p-8 flex flex-col flex-grow">
-              <h3 className="text-2xl font-bold mb-3 font-serif text-[#1B4332]">{product.name}</h3>
-              <p className="text-stone-500 text-sm mb-6 flex-grow">{product.description}</p>
-              <div className="flex justify-between items-center mt-auto">
-                <span className="text-2xl font-bold text-[#1B4332]">{product.price}</span>
-                <a
-                  href={getWhatsAppLink(`Olá! Tenho interesse no ${product.name} de Manduri.`)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#1B4332] text-white p-3 rounded-full hover:bg-[#081C15] transition-colors shadow-lg"
-                >
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" /></svg>
-                </a>
-              </div>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setCart({})}
+                className="border-2 border-white/30 text-white px-6 py-3 rounded-2xl font-bold hover:bg-white/10 transition-all flex items-center gap-2"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                Limpar
+              </button>
+              <button
+                onClick={handleCheckout}
+                className="bg-white text-[#1B4332] px-8 py-3 rounded-2xl font-bold hover:bg-[#C19A6B] hover:text-white transition-all shadow-lg flex items-center gap-3"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" /><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.612.638l4.704-1.393A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.239 0-4.308-.724-5.993-1.953a.5.5 0 00-.404-.078l-3.384 1.002 1.07-3.236a.5.5 0 00-.064-.427A9.953 9.953 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z" /></svg>
+                Finalizar Pedido
+              </button>
             </div>
           </div>
-        ))}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 // --- PAGINA: PROCESSO ---
 const ProcessPage: React.FC = () => (
@@ -321,7 +421,7 @@ const ProcessPage: React.FC = () => (
             </div>
             <div className="md:w-1/2 w-full">
               <div className="rounded-3xl overflow-hidden aspect-square shadow-inner border border-stone-200 bg-white">
-                <img src={step.image} alt={step.title} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-200" />
+                <img src={step.image} alt={step.title} className="w-full h-full object-cover transition-all duration-200" />
               </div>
             </div>
           </div>
@@ -334,15 +434,20 @@ const ProcessPage: React.FC = () => (
 // --- PAGINA: VIDEOS ---
 const VideosPage: React.FC = () => {
   const videoCards = [
-    { id: 0, title: 'Momentos Maitá II', subtitle: 'Experiência Completa', thumb: '', video: maitaVideo2 },
-    { id: 1, title: 'Momentos Maitá III', subtitle: 'Detalhes da Torra', thumb: '', video: maitaVideo3 },
-    { id: 2, title: 'O Despertar da Fazenda', subtitle: 'Amanhecer em Manduri', thumb: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1000&auto=format&fit=crop' },
-    { id: 3, title: 'Momentos Maitá', subtitle: 'Preview Exclusivo', thumb: '', video: maitaVideo1 },
-    { id: 4, title: 'Arte no Preparo', subtitle: 'Método Hario V60', thumb: processCuraImg, video: maitaVideoPreparo },
+    { id: 0, title: 'Momentos Maitá', subtitle: 'Saindo da Torra', thumb: '', video: maitaVideo2 },
+    { id: 1, title: 'Momentos Maitá II', subtitle: 'Toque final', thumb: '', video: maitaVideo3 },
+    { id: 2, title: 'O Despertar da Fazenda', subtitle: 'Amanhecer em Manduri', thumb: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1000&auto=format&fit=crop', video: maitaVideoDespertar },
+    { id: 3, title: 'Momentos Maitá III', subtitle: 'Preview Exclusivo', thumb: '', video: maitaVideo1 },
+    { id: 4, title: 'Arte no Preparo', subtitle: 'Preview Exclusivo II', thumb: processCuraImg, video: maitaVideoPreparo },
     { id: 5, title: 'Momentos Maitá IV', subtitle: 'Natureza em Movimento', thumb: '', video: maitaVideo4 },
     { id: 6, title: 'A Colheita Seletiva', subtitle: 'Mãos que cuidam', thumb: 'https://images.unsplash.com/photo-1524350300060-d39f447120e7?q=80&w=1000&auto=format&fit=crop', video: maitaVideoColheita },
-    { id: 7, title: 'Lifestyle Maitá', subtitle: 'Momentos de Pausa', thumb: gardenImg, video: maitaVideoLifestyle },
+    { id: 7, title: 'Lifestyle Maitá', subtitle: 'O feeling da do torrefador', thumb: gardenImg, video: maitaVideoLifestyle },
     { id: 8, title: 'Nossa Torrefação', subtitle: 'O perfume do grão', thumb: 'https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?q=80&w=1000&auto=format&fit=crop', video: maitaVideoTorra },
+    { id: 9, title: 'Raízes do Campo', subtitle: 'Mel direto da natureza', thumb: '', video: maitaVideoExtra1 },
+    { id: 10, title: 'Entre Folhas e Grãos', subtitle: 'Pirajú - SP', thumb: '', video: maitaVideoExtra2 },
+    { id: 11, title: 'Horizontes de Manduri', subtitle: 'Força aérea presente', thumb: '', video: maitaVideoExtra3 },
+    { id: 12, title: 'Entre Folhas e Grãos II', subtitle: 'Águas de Santa Bárbara - SP', thumb: '', video: maitaVideoExtra4 },
+    { id: 13, title: 'Horizontes de Manduri II', subtitle: 'Força aérea presente', thumb: '', video: maitaVideoExtra5 },
   ];
 
   return (
