@@ -23,6 +23,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
     { id: 'history', label: 'História' },
     { id: 'products', label: 'Produtos' },
     { id: 'process', label: 'Processo' },
+    { id: 'roast', label: 'Torra' },
     { id: 'videos', label: 'Vídeos' },
   ];
 
@@ -38,7 +39,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
               {BRAND_NAME}
             </span>
           </button>
-          
+
           {/* Botão de Início exclusivo para Mobile */}
           <div className="md:hidden flex items-center">
             {currentPage !== 'home' && (
@@ -47,11 +48,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
                   setPage('home');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full border text-[10px] font-bold uppercase tracking-widest transition-all ${
-                  scrolled || currentPage !== 'home'
+                className={`flex items-center gap-2 px-4 py-2 rounded-full border text-[10px] font-bold uppercase tracking-widest transition-all ${scrolled || currentPage !== 'home'
                     ? 'text-stone-900 border-stone-200 bg-stone-100'
                     : 'text-white border-white/20 bg-white/10'
-                }`}
+                  }`}
               >
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -69,16 +69,15 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
                   setPage(link.id);
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className={`font-medium transition-colors ${
-                  currentPage === link.id 
-                    ? 'text-[#1B4332]' 
+                className={`font-medium transition-colors ${currentPage === link.id
+                    ? 'text-[#1B4332]'
                     : (scrolled || currentPage !== 'home' ? 'text-stone-600 hover:text-[#1B4332]' : 'text-stone-200 hover:text-white')
-                }`}
+                  }`}
               >
                 {link.label}
               </button>
             ))}
-            <a 
+            <a
               href={getWhatsAppLink("Olá! Gostaria de fazer um pedido de Café Maitá.")}
               target="_blank"
               rel="noopener noreferrer"

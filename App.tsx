@@ -10,6 +10,8 @@ import historyImg from './Cafe-maita/foto/IMG_20250711_172938.jpg';
 import cidadeImg from './Cafe-maita/foto/IMG_20250701_213210.jpg';
 import identidadeImg from './Cafe-maita/foto/ChatGPT Image 16 de fev. de 2026, 18_55_20.png';
 import ararasImg from './Cafe-maita/foto/IMG_20260221_012644_128.jpg';
+import extraFoto1 from './Cafe-maita/foto/WhatsApp Image 2026-03-03 at 08.05.47 (2).jpeg';
+import extraFoto2 from './Cafe-maita/foto/WhatsApp Image 2026-03-29 at 15.55.23.jpeg';
 import maitaVideo1 from './Cafe-maita/video/VID_20260215_201452_585.mp4';
 import maitaVideo2 from './Cafe-maita/video/YouCut_20260215_214824771.mp4';
 import maitaVideo3 from './Cafe-maita/video/VID_20260215_201316_174.mp4';
@@ -20,10 +22,12 @@ import maitaVideoPreparo from './Cafe-maita/video/VID_20260215_201118_829.mp4';
 import maitaVideoLifestyle from './Cafe-maita/video/torranofogo.mp4';
 import maitaVideoDespertar from './Cafe-maita/video/VID_20260221_013026_938.mp4';
 import maitaVideoExtra1 from './Cafe-maita/video/VID_20260221_012359_348.mp4';
-import maitaVideoExtra2 from './Cafe-maita/video/VID_20260221_012422_976.mp4';
+import maitaVideoExtra2 from './Cafe-maita/video/.trashed-1777403437-VID_20260323_123809.mp4';
 import maitaVideoExtra3 from './Cafe-maita/video/VID_20260221_013039_845.mp4';
 import maitaVideoExtra4 from './Cafe-maita/video/VID_20260221_012533_165.mp4';
 import maitaVideoExtra5 from './Cafe-maita/video/VID_20260221_013039_926.mp4';
+import maitaVideoExtra6 from './Cafe-maita/video/VID_20260322_182644.mp4';
+import maitaVideoExtra7 from './Cafe-maita/video/trashed-1777403495-vid-20260322-134631_GhcBr1wL.mp4';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -36,6 +40,8 @@ const App: React.FC = () => {
         return <ProductsPage />;
       case 'process':
         return <ProcessPage />;
+      case 'roast':
+        return <RoastPage />;
       case 'videos':
         return <VideosPage />;
       default:
@@ -115,61 +121,69 @@ const HomePage: React.FC<{ onNavigate: (p: string) => void }> = ({ onNavigate })
             </div>
           </div>
         </div>
+      </div>
+    </section>
+  </>
+);
 
-        <div className="w-full text-center -mb-8">
-          <h2 className="text-4xl font-bold font-serif text-[#1B4332]">Etapas da torra</h2>
-        </div>
+// --- PAGINA: TORRA ---
+const RoastPage: React.FC = () => (
+  <div className="pt-32 pb-24 bg-stone-50 text-stone-900">
+    <div className="max-w-7xl mx-auto px-4">
+      <div className="text-center mb-16">
+        <span className="text-[#1B4332] font-bold uppercase tracking-widest text-xs mb-4 block">Processo Artesanal</span>
+        <h1 className="text-4xl md:text-5xl font-bold font-serif text-[#1B4332]">Etapas da Torra</h1>
+      </div>
 
-        <div className="w-full bg-stone-50 p-8 md:p-12 rounded-[2.5rem] border border-stone-200 shadow-sm">
-          <div className="max-w-4xl mx-auto space-y-10">
-            <div className="border-l-4 border-[#1B4332] pl-6 py-2 flex flex-col md:flex-row items-center gap-8">
-              <div className="flex-1">
-                <h3 className="text-2xl font-serif font-bold text-[#1B4332] mb-4">Torreador Manual Cilíndrico:</h3>
-                <p className="text-stone-700 mb-2">Um pequeno cilindro metálico giratório colocado sobre o fogão (a gás ou lenha).</p>
-                <p className="text-stone-700 mb-2">Coloque os grãos até a metade, pois eles aumentam de volume.</p>
-                <p className="text-stone-700">Gire a manivela constantemente para garantir uma torra uniforme.</p>
+      <div className="w-full bg-white p-8 md:p-12 rounded-[2.5rem] border border-stone-200 shadow-sm max-w-4xl mx-auto">
+        <div className="space-y-10">
+          <div className="border-l-4 border-[#1B4332] pl-6 py-2 flex flex-col md:flex-row items-center gap-8">
+            <div className="flex-1">
+              <h3 className="text-2xl font-serif font-bold text-[#1B4332] mb-4">Torreador Manual Cilíndrico:</h3>
+              <p className="text-stone-700 mb-2">Um pequeno cilindro metálico giratório colocado sobre o fogão (a gás ou lenha).</p>
+              <p className="text-stone-700 mb-2">Coloque os grãos até a metade, pois eles aumentam de volume.</p>
+              <p className="text-stone-700">Gire a manivela constantemente para garantir uma torra uniforme.</p>
+            </div>
+            <div className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 rounded-2xl overflow-hidden shadow-md border border-stone-200 bg-white p-2">
+              <img
+                src={logoImg}
+                className="w-full h-full object-contain"
+                alt="Ilustração Torrador de Bola"
+              />
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <h3 className="text-2xl font-serif font-bold text-[#1B4332]">Fases da Torra e Sinais</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-stone-50 p-6 rounded-2xl shadow-sm border border-stone-100">
+                <strong className="text-[#1B4332] block mb-2">Secagem (cor verde para amarelo):</strong>
+                <p className="text-stone-600 text-sm">Liberação de água e compostos voláteis, cheiro de grama/pão.</p>
               </div>
-              <div className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 rounded-2xl overflow-hidden shadow-md border border-stone-200 bg-white p-2">
-                <img
-                  src={logoImg}
-                  className="w-full h-full object-contain"
-                  alt="Ilustração Torrador de Bola"
-                />
+              <div className="bg-stone-50 p-6 rounded-2xl shadow-sm border border-stone-100">
+                <strong className="text-[#1B4332] block mb-2">Reação de Maillard (amarelo para marrom):</strong>
+                <p className="text-stone-600 text-sm">O grão começa a caramelizar e a aumentar de tamanho.</p>
+              </div>
+              <div className="bg-stone-50 p-6 rounded-2xl shadow-sm border border-stone-100">
+                <strong className="text-[#1B4332] block mb-2">Primeiro Estalo (First Crack):</strong>
+                <p className="text-stone-600 text-sm">Acontece por volta de 8-12 minutos (aprox. 180°C-200°C). Soa como estalos de pipoca, indicando que o café está com uma torra clara a média.</p>
+              </div>
+              <div className="bg-stone-50 p-6 rounded-2xl shadow-sm border border-stone-100">
+                <strong className="text-[#1B4332] block mb-2">Segundo Estalo (Second Crack):</strong>
+                <p className="text-stone-600 text-sm">Estalos mais rápidos e agudos (aprox. 220°C+). Indica torra escura, com surgimento de óleos na superfície.</p>
               </div>
             </div>
-
-            <div className="space-y-6">
-              <h3 className="text-2xl font-serif font-bold text-[#1B4332]">Fases da Torra e Sinais</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-stone-100">
-                  <strong className="text-[#1B4332] block mb-2">Secagem (cor verde para amarelo):</strong>
-                  <p className="text-stone-600 text-sm">Liberação de água e compostos voláteis, cheiro de grama/pão.</p>
-                </div>
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-stone-100">
-                  <strong className="text-[#1B4332] block mb-2">Reação de Maillard (amarelo para marrom):</strong>
-                  <p className="text-stone-600 text-sm">O grão começa a caramelizar e a aumentar de tamanho.</p>
-                </div>
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-stone-100">
-                  <strong className="text-[#1B4332] block mb-2">Primeiro Estalo (First Crack):</strong>
-                  <p className="text-stone-600 text-sm">Acontece por volta de 8-12 minutos (aprox. 180°C-200°C). Soa como estalos de pipoca, indicando que o café está com uma torra clara a média.</p>
-                </div>
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-stone-100">
-                  <strong className="text-[#1B4332] block mb-2">Segundo Estalo (Second Crack):</strong>
-                  <p className="text-stone-600 text-sm">Estalos mais rápidos e agudos (aprox. 220°C+). Indica torra escura, com surgimento de óleos na superfície.</p>
-                </div>
-              </div>
-              <div className="bg-[#1B4332] text-white p-8 rounded-2xl shadow-lg mt-8">
-                <strong className="text-[#C19A6B] text-lg block mb-2 uppercase tracking-widest font-bold">Resfriamento:</strong>
-                <p className="leading-relaxed">
-                  Passo crucial. Transfira os grãos imediatamente para um escorredor de metal e mexa/abane para resfriar rapidamente e evitar que a torra continue, o que resultaria em gosto de queimado.
-                </p>
-              </div>
+            <div className="bg-[#1B4332] text-white p-8 rounded-2xl shadow-lg mt-8">
+              <strong className="text-[#C19A6B] text-lg block mb-2 uppercase tracking-widest font-bold">Resfriamento:</strong>
+              <p className="leading-relaxed">
+                Passo crucial. Transfira os grãos imediatamente para um escorredor de metal e mexa/abane para resfriar rapidamente e evitar que a torra continue, o que resultaria em gosto de queimado.
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  </>
+    </div>
+  </div>
 );
 
 // --- PAGINA: HISTORIA ---
@@ -207,7 +221,8 @@ const HistoryPage: React.FC = () => (
           </p>
         </div>
 
-        <div className="mt-20 pt-10 border-t border-stone-200 clearfix">
+
+        <div className="mt-20 pt-10 clearfix">
           <img src={ararasImg} alt="Araras" className="float-left w-32 h-32 md:w-48 md:h-48 object-cover rounded-2xl shadow-lg mr-6 mb-4" />
           <h3 className="text-3xl font-serif text-stone-900 mb-8 text-[#1B4332]">Araras: O Pulso Rural de Manduri</h3>
           <p>
@@ -229,6 +244,15 @@ const HistoryPage: React.FC = () => (
           <p>
             A economia local é predominantemente agropecuária, com pequenas propriedades dedicadas ao cultivo de hortaliças como alface, tomate e pimentão, além da existência de associação de produtores rurais, indicando organização comunitária no setor.
           </p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-6 mb-16 mt-12 w-full">
+          <div className="aspect-square md:aspect-[4/3] overflow-hidden rounded-3xl shadow-xl">
+            <img src={extraFoto1} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Fazenda Maitá 1" />
+          </div>
+          <div className="aspect-square md:aspect-[4/3] overflow-hidden rounded-3xl shadow-xl">
+            <img src={extraFoto2} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Fazenda Maitá 2" />
+          </div>
         </div>
 
         <div className="bg-stone-100 p-10 rounded-3xl my-16 border border-stone-200">
@@ -448,6 +472,8 @@ const VideosPage: React.FC = () => {
     { id: 11, title: 'Horizontes de Manduri', subtitle: 'Força aérea presente', thumb: '', video: maitaVideoExtra3 },
     { id: 12, title: 'Entre Folhas e Grãos II', subtitle: 'Águas de Santa Bárbara - SP', thumb: '', video: maitaVideoExtra4 },
     { id: 13, title: 'Horizontes de Manduri II', subtitle: 'Força aérea presente', thumb: '', video: maitaVideoExtra5 },
+    { id: 14, title: 'Momentos Maitá V', subtitle: 'Rotina e Cuidado', thumb: '', video: maitaVideoExtra6 },
+    { id: 15, title: 'Momentos Maitá VI', subtitle: 'Visual Exclusivo', thumb: '', video: maitaVideoExtra7 },
   ];
 
   return (
@@ -516,6 +542,7 @@ const Footer: React.FC<{ onNavigate: (p: string) => void }> = ({ onNavigate }) =
             <li><button onClick={() => { onNavigate('history'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Nossa História</button></li>
             <li><button onClick={() => { onNavigate('products'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Produtos</button></li>
             <li><button onClick={() => { onNavigate('process'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Processo de Produção</button></li>
+            <li><button onClick={() => { onNavigate('roast'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Torra</button></li>
             <li><button onClick={() => { onNavigate('videos'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Momentos Maitá (Vídeos)</button></li>
           </ul>
         </div>
