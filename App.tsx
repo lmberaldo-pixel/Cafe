@@ -22,10 +22,8 @@ import maitaVideoPreparo from './Cafe-maita/video/VID_20260215_201118_829.mp4';
 import maitaVideoLifestyle from './Cafe-maita/video/torranofogo.mp4';
 import maitaVideoDespertar from './Cafe-maita/video/VID_20260221_013026_938.mp4';
 import maitaVideoExtra1 from './Cafe-maita/video/VID_20260221_012359_348.mp4';
-import maitaVideoExtra2 from './Cafe-maita/video/.trashed-1777403437-VID_20260323_123809.mp4';
 import maitaVideoExtra3 from './Cafe-maita/video/VID_20260221_013039_845.mp4';
 import maitaVideoExtra4 from './Cafe-maita/video/VID_20260221_012533_165.mp4';
-import maitaVideoExtra7 from './Cafe-maita/video/trashed-1777403495-vid-20260322-134631_GhcBr1wL.mp4';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -466,10 +464,8 @@ const VideosPage: React.FC = () => {
     { id: 7, title: 'Lifestyle Maitá', subtitle: 'O feeling da do torrefador', thumb: gardenImg, video: maitaVideoLifestyle },
     { id: 8, title: 'Nossa Torrefação', subtitle: 'O perfume do grão', thumb: 'https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?q=80&w=1000&auto=format&fit=crop', video: maitaVideoTorra },
     { id: 9, title: 'Raízes do Campo', subtitle: 'Mel direto da natureza', thumb: '', video: maitaVideoExtra1 },
-    { id: 10, title: 'Entre Folhas e Grãos', subtitle: 'Pirajú - SP', thumb: '', video: maitaVideoExtra2 },
     { id: 11, title: 'Horizontes de Manduri', subtitle: 'Força aérea presente', thumb: '', video: maitaVideoExtra3 },
     { id: 12, title: 'Entre Folhas e Grãos II', subtitle: 'Águas de Santa Bárbara - SP', thumb: '', video: maitaVideoExtra4 },
-    { id: 15, title: 'Momentos Maitá VI', subtitle: 'Visual Exclusivo', thumb: '', video: maitaVideoExtra7 },
   ];
 
   return (
