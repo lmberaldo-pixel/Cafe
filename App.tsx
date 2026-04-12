@@ -25,8 +25,6 @@ import maitaVideoExtra1 from './Cafe-maita/video/VID_20260221_012359_348.mp4';
 import maitaVideoExtra2 from './Cafe-maita/video/.trashed-1777403437-VID_20260323_123809.mp4';
 import maitaVideoExtra3 from './Cafe-maita/video/VID_20260221_013039_845.mp4';
 import maitaVideoExtra4 from './Cafe-maita/video/VID_20260221_012533_165.mp4';
-import maitaVideoExtra5 from './Cafe-maita/video/VID_20260221_013039_926.mp4';
-import maitaVideoExtra6 from './Cafe-maita/video/VID_20260322_182644.mp4';
 import maitaVideoExtra7 from './Cafe-maita/video/trashed-1777403495-vid-20260322-134631_GhcBr1wL.mp4';
 
 const App: React.FC = () => {
@@ -471,8 +469,6 @@ const VideosPage: React.FC = () => {
     { id: 10, title: 'Entre Folhas e Grãos', subtitle: 'Pirajú - SP', thumb: '', video: maitaVideoExtra2 },
     { id: 11, title: 'Horizontes de Manduri', subtitle: 'Força aérea presente', thumb: '', video: maitaVideoExtra3 },
     { id: 12, title: 'Entre Folhas e Grãos II', subtitle: 'Águas de Santa Bárbara - SP', thumb: '', video: maitaVideoExtra4 },
-    { id: 13, title: 'Horizontes de Manduri II', subtitle: 'Força aérea presente', thumb: '', video: maitaVideoExtra5 },
-    { id: 14, title: 'Momentos Maitá V', subtitle: 'Rotina e Cuidado', thumb: '', video: maitaVideoExtra6 },
     { id: 15, title: 'Momentos Maitá VI', subtitle: 'Visual Exclusivo', thumb: '', video: maitaVideoExtra7 },
   ];
 
