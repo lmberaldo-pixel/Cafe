@@ -70,7 +70,7 @@ const HomePage: React.FC<{ onNavigate: (p: string) => void }> = ({ onNavigate })
 
       {/* Texto Gigante Esmaecido */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        <span className="bg-gradient-to-b from-white/60 to-white/0 bg-clip-text text-transparent font-sans font-black uppercase text-[15vw] leading-none select-none whitespace-nowrap tracking-tighter inline-block scale-y-[1.8] scale-x-75 translate-y-[20vh]">
+        <span className="bg-gradient-to-b from-white/60 to-white/0 bg-clip-text text-transparent font-sans font-black uppercase text-[15vw] leading-none select-none whitespace-nowrap tracking-tighter inline-block scale-y-[1.8] scale-x-75 translate-y-[35vh] md:translate-y-[20vh]">
           100% Arábica
         </span>
       </div>
