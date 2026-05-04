@@ -24,6 +24,15 @@ import maitaVideoDespertar from './Cafe-maita/video/VID_20260221_013026_938.mp4'
 import maitaVideoExtra1 from './Cafe-maita/video/VID_20260221_012359_348.mp4';
 import maitaVideoExtra3 from './Cafe-maita/video/VID_20260221_013039_845.mp4';
 import maitaVideoExtra4 from './Cafe-maita/video/VID_20260221_012533_165.mp4';
+import graoColheita3 from './Cafe-maita/foto/png/graocolheita3.png';
+import graoColheita4 from './Cafe-maita/foto/png/graocolheita4.png';
+import graoColheita5 from './Cafe-maita/foto/png/graocolheita5.png';
+import novaImg1 from './Cafe-maita/foto/WhatsApp Image 2026-03-03 at 08.05.48 (1).jpeg';
+import novaImg2 from './Cafe-maita/foto/image_27b25160.png';
+import novaImg3 from './Cafe-maita/foto/WhatsApp Image 2026-03-02 at 09.48.50.jpeg';
+import novaImg4 from './Cafe-maita/foto/ChatGPT Image 21 de fev. de 2026, 18_27_55.png';
+import novaImg5 from './Cafe-maita/foto/pe1.jpg';
+import novaImg6 from './Cafe-maita/foto/pe10.jpg';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -503,14 +512,23 @@ const ProcessPage: React.FC = () => (
 const VideosPage: React.FC = () => {
   const videoCards = [
     { id: 0, title: 'Momentos Maitá', subtitle: 'Saindo da Torra', thumb: '', video: maitaVideo2 },
+    { id: 13, title: 'Colheita Selecionada', subtitle: 'Safra Especial', thumb: graoColheita3, video: '' },
     { id: 1, title: 'Momentos Maitá II', subtitle: 'Toque final', thumb: '', video: maitaVideo3 },
+    { id: 16, title: 'Rotina do Campo', subtitle: 'O dia a dia', thumb: novaImg1, video: '' },
     { id: 2, title: 'O Despertar da Fazenda', subtitle: 'Amanhecer em Manduri', thumb: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1000&auto=format&fit=crop', video: maitaVideoDespertar },
+    { id: 19, title: 'A Magia do Campo', subtitle: 'Nosso dia a dia', thumb: novaImg4, video: '' },
     { id: 3, title: 'Momentos Maitá III', subtitle: 'Preview Exclusivo', thumb: '', video: maitaVideo1 },
+    { id: 14, title: 'Fruto Perfeito', subtitle: 'Safra Especial', thumb: graoColheita4, video: '' },
     { id: 4, title: 'Arte no Preparo', subtitle: 'Preview Exclusivo II', thumb: processCuraImg, video: maitaVideoPreparo },
+    { id: 20, title: 'Pé de Café', subtitle: 'Crescimento', thumb: novaImg5, video: '' },
     { id: 5, title: 'Momentos Maitá IV', subtitle: 'Natureza em Movimento', thumb: '', video: maitaVideo4 },
+    { id: 17, title: 'Armazenamento', subtitle: 'Cuidados essenciais', thumb: novaImg2, video: '' },
     { id: 6, title: 'A Colheita Seletiva', subtitle: 'Mãos que cuidam', thumb: 'https://images.unsplash.com/photo-1524350300060-d39f447120e7?q=80&w=1000&auto=format&fit=crop', video: maitaVideoColheita },
+    { id: 21, title: 'Pé de Café em Detalhes', subtitle: 'Nossa base', thumb: novaImg6, video: '' },
     { id: 7, title: 'Lifestyle Maitá', subtitle: 'O feeling da do torrefador', thumb: gardenImg, video: maitaVideoLifestyle },
+    { id: 15, title: 'Detalhes do Grão', subtitle: 'Safra Especial', thumb: graoColheita5, video: '' },
     { id: 8, title: 'Nossa Torrefação', subtitle: 'O perfume do grão', thumb: 'https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?q=80&w=1000&auto=format&fit=crop', video: maitaVideoTorra },
+    { id: 18, title: 'Essência da Fazenda', subtitle: 'Nossas Raízes', thumb: novaImg3, video: '' },
     { id: 9, title: 'Raízes do Campo', subtitle: 'Mel direto da natureza', thumb: '', video: maitaVideoExtra1 },
     { id: 11, title: 'Horizontes de Manduri', subtitle: 'Força aérea presente', thumb: '', video: maitaVideoExtra3 },
     { id: 12, title: 'Entre Folhas e Grãos II', subtitle: 'Águas de Santa Bárbara - SP', thumb: '', video: maitaVideoExtra4 },
@@ -543,11 +561,13 @@ const VideosPage: React.FC = () => {
 
               <div className="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-transparent to-transparent opacity-80" />
 
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 transform scale-75 group-hover:scale-100 transition-transform duration-500">
-                  <svg className="w-8 h-8 text-white fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+              {video.video && (
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 transform scale-75 group-hover:scale-100 transition-transform duration-500">
+                    <svg className="w-8 h-8 text-white fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </div>
                 </div>
-              </div>
+              )}
 
               <div className="absolute bottom-8 left-8 right-8 text-white">
                 <p className="text-[10px] uppercase tracking-widest font-bold text-[#C19A6B] mb-1">{video.subtitle}</p>
@@ -583,7 +603,7 @@ const Footer: React.FC<{ onNavigate: (p: string) => void }> = ({ onNavigate }) =
             <li><button onClick={() => { onNavigate('products'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Produtos</button></li>
             <li><button onClick={() => { onNavigate('process'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Processo de Produção</button></li>
             <li><button onClick={() => { onNavigate('roast'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Torra</button></li>
-            <li><button onClick={() => { onNavigate('videos'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Momentos Maitá (Vídeos)</button></li>
+            <li><button onClick={() => { onNavigate('videos'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Momentos Maitá (Vídeos e Fotos)</button></li>
           </ul>
         </div>
         <div>

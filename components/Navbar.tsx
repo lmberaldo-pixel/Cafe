@@ -24,7 +24,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
     { id: 'products', label: 'Produtos' },
     { id: 'process', label: 'Processo' },
     { id: 'roast', label: 'Torra' },
-    { id: 'videos', label: 'Vídeos' },
+    { id: 'videos', label: 'Vídeos e Fotos' },
   ];
 
   return (
