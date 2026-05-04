@@ -60,12 +60,19 @@ const App: React.FC = () => {
 const HomePage: React.FC<{ onNavigate: (p: string) => void }> = ({ onNavigate }) => (
   <>
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden bg-black">
         <img
           src={processCuraImg}
-          className="w-full h-full object-cover brightness-[0.4] animate-slow-zoom"
+          className="w-full h-full object-cover opacity-50 animate-slow-zoom"
           alt="Coffee Table"
         />
+      </div>
+
+      {/* Texto Gigante Esmaecido */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <span className="bg-gradient-to-b from-white/60 to-white/0 bg-clip-text text-transparent font-sans font-black uppercase text-[15vw] leading-none select-none whitespace-nowrap tracking-tighter inline-block scale-y-[1.8] scale-x-75 translate-y-[20vh]">
+          100% Arábica
+        </span>
       </div>
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-light text-white mb-10 tracking-wide drop-shadow-md leading-relaxed">
@@ -114,6 +121,47 @@ const HomePage: React.FC<{ onNavigate: (p: string) => void }> = ({ onNavigate })
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 alt="Grãos de Café"
               />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-24 bg-stone-50 px-4">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <span className="text-[#1B4332] font-bold uppercase tracking-widest text-xs mb-4 block">Qualidade Sensorial</span>
+          <h2 className="text-4xl font-bold font-serif mb-4 text-[#1B4332]">Selos da ABIC</h2>
+          <p className="text-stone-500 max-w-2xl mx-auto">
+            A Associação Brasileira da Indústria de Café classifica os cafés comerciais em categorias de acordo com a qualidade sensorial (nota de 0 a 10):
+          </p>
+        </div>
+        
+        <div className="flex flex-col gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-stone-100 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold font-serif text-[#1B4332] mb-3">Café Extraforte</h3>
+              <p className="text-stone-600 text-sm leading-relaxed">Torra intensa e sabor marcante, voltado para quem prefere café forte.</p>
+            </div>
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-stone-100 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold font-serif text-[#1B4332] mb-3">Café Tradicional</h3>
+              <p className="text-stone-600 text-sm leading-relaxed">Equilibrado, com torra média, ideal para o consumo diário (nota abaixo de 6,0).</p>
+            </div>
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-stone-100 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold font-serif text-[#1B4332] mb-3">Café Superior</h3>
+              <p className="text-stone-600 text-sm leading-relaxed">Qualidade superior, com notas de 6,0 a 7,2. Selecionado e com rigoroso controle de impurezas.</p>
+            </div>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-stone-200 p-8 rounded-3xl shadow-sm border border-stone-300 hover:shadow-md transition-shadow">
+              <h3 className="text-2xl font-bold font-serif text-[#1B4332] mb-3">Café Gourmet</h3>
+              <p className="text-stone-700 text-sm leading-relaxed">Feito com grãos 100% arábica, nota sensorial acima de 7,3, superior em aroma e sabor.</p>
+            </div>
+            <div className="bg-[#1B4332] p-8 rounded-3xl shadow-xl border border-[#081C15] hover:shadow-2xl transition-shadow text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#C19A6B] rounded-bl-full opacity-20"></div>
+              <h3 className="text-2xl font-bold font-serif text-[#C19A6B] mb-3 relative z-10">Café Especial</h3>
+              <p className="text-white/90 text-sm leading-relaxed relative z-10">Mais de 80 pontos (SCA), com características sensoriais superiores e rastreabilidade.</p>
             </div>
           </div>
         </div>
